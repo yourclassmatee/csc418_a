@@ -19,4 +19,5 @@ void main() {
   // Your solution should go here.
   // Only the background color calculations have been provided as an example.
   gl_FragColor = vec4(diffuseColor, 1.0);
+  
 }
