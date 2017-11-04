@@ -15,5 +15,5 @@ void main() {
 
 
 
-  texCoordInterp = vec2(texCoord.x, texCoord.y);
+  texCoordInterp = vec2(texCoord.x, 1.0 - texCoord.y);
 }

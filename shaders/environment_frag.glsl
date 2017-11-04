@@ -24,8 +24,8 @@ void main() {
   // The model is currently rendered in black
   //gl_FragColor = vec4(vec3(0.0), 1.0);
 
-  //vec3 cubemap_vec = reflect(viewVec, normalInterp);
-  vec4 a_color = textureCube(envTexSampler, normalInterp);
+  vec3 cubemap_vec = reflect(-viewVec, normalInterp);
+  vec4 a_color = textureCube(envTexSampler, cubemap_vec);
 
   //diffuse
 
