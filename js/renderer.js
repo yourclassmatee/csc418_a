@@ -93,10 +93,10 @@ function Renderer(canvasName, vertSrc, fragSrc)
         return;
     }
 
-    //gl.enable(gl.DEPTH_TEST);
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.DST_ALPHA);
-    gl.disable(gl.DEPTH_TEST);
+    gl.enable(gl.DEPTH_TEST);
+    // gl.enable(gl.BLEND);
+    // gl.blendFunc(gl.SRC_ALPHA, gl.DST_ALPHA);
+    // gl.disable(gl.DEPTH_TEST);
     setupShaders();
 
     // generate a Vertex Buffer Object (VBO)
