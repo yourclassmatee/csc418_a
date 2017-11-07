@@ -28,5 +28,21 @@ uniform samplerCube envTexSampler;	// cube sampler for the environment map
 void main() {
   // Your solution should go here.
   // Only the ambient colour calculations have been provided as an example.
-  gl_FragColor = vec4(ambientColor, 1.0);
+  //gl_FragColor = vec4(ambientColor, 1.0);
+
+  float opac = dot(normalize(normalInterp), normalize(-viewVec));
+  opac = abs(opac);
+  opac = 1.0-pow(opac, 2.0);
+  vec4 a_color = vec4(ambientColor*opac, 1.0);
+
+  //diffuse
+  vec3 light = normalize(lightPos - vertPos);
+  float d_intensity = dot(light, normalInterp) * Kd;
+  if (d_intensity < 0.0){
+    d_intensity = 0.0;
+  }
+  vec4 d_color = vec4(diffuseColor * d_intensity * opac, 1.0);
+  
+  gl_FragColor = a_color + d_color;
+  
 }
